@@ -1,0 +1,25 @@
+block content
+    head
+        link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
+        link(rel='stylesheet', href='https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css')
+
+        script(src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js')
+        script(src='https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js')
+    body
+
+        .container
+            h3 Posts
+            table#pickle.table.table-hover.table-striped.table-bordered
+                thead
+                    tr
+                        th Title
+                        th Body
+                tbody
+                    each post in posts
+                        tr
+                            td= post.title
+                            td= post.body
+        script.
+            $(document).ready(function () {
+                $('#pickle').DataTable();
+            });
